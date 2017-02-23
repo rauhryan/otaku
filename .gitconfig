@@ -1,4 +1,5 @@
 [alias]
+    pnb =  push -u origin HEAD
     st = status
     cm = commit -m
     br = branch
@@ -13,6 +14,7 @@
     mt = mergetool
     rebc = rebase --continue
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)- %an%Creset' --abbrev-commit --date=relative   
+	new = log master.. --oneline --decorate --reverse
 [core]
     excludesfile = ~/.gitignore_global
 	editor = vim
@@ -25,7 +27,10 @@
 	default = simple
 [merge]
     keepBackup = false;
-    tool = p4merge
+    tool = bcomp
+[mergetool "bcomp"]
+  trustExitCode = true
+  cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 [mergetool "p4merge"]
     cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
     keepTemporaries = false
@@ -33,3 +38,5 @@
     keepBackup = false
 [color]
 	ui = true
+
+

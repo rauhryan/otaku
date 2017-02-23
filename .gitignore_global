@@ -1,8 +1,14 @@
 # Vim files
 *.swp
+.kansorc
+**/kanso/packages
 
 
 .vagrant
 
 
 *.orig
+.bundle
+.DS_Store
+.node-version
+.ruby-version

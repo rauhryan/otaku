@@ -7,8 +7,11 @@
 .vagrant
 
 
+.qgtunnel_hosts
 *.orig
 .bundle
 .DS_Store
 .node-version
 .ruby-version
+.ackrc
+

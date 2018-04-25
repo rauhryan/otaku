@@ -16,7 +16,7 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)- %an%Creset' --abbrev-commit --date=relative   
 	new = log master.. --oneline --decorate --reverse
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/rauhryan/.gitignore_global
 	editor = vim
 [user]
     name = Ryan Rauh
@@ -27,7 +27,7 @@
 	default = simple
 [merge]
     keepBackup = false;
-    tool = bcomp
+    tool = vimdiff
 [mergetool "bcomp"]
   trustExitCode = true
   cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
@@ -40,3 +40,8 @@
 	ui = true
 
 
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

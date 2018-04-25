@@ -22,7 +22,7 @@ if ARGV.first == "/?"
 end
 
 Dir.glob("{*,.*}") do |file|
-        excludes = [".","..","symlink.rb",".git"]
+  excludes = [".","..","symlink.rb",".git", '.gitmodules']
         home = ARGV.first == "install" ? ENV["HOME"] : ARGV.first
         puts "Symlink #{Dir.pwd.gsub("/","\\")}\\#{file} to #{home}" unless excludes.include? file
         cmd = "ln -s -F #{ Dir.pwd }/#{file} #{home}/#{file}"

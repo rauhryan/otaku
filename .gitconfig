@@ -13,7 +13,7 @@
     df = diff
     mt = mergetool
     rebc = rebase --continue
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)- %an%Creset' --abbrev-commit --date=relative   
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)- %an%Creset' --abbrev-commit --date=relative
 	new = log master.. --oneline --decorate --reverse
 [core]
 	excludesfile = /Users/rauhryan/.gitignore_global
@@ -45,3 +45,5 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[mergetool]
+	keepBackup = false
